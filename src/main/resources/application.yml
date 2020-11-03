@@ -1,5 +1,5 @@
 #
-name: email-system
+name: spring-boot-template
 environment: dev
 
 logging:
@@ -10,13 +10,13 @@ logging:
       SQL: DEBUG
       type.descriptor.sql: trace
   file:
-    name: ${HOME}/logs/email-system.log
+    name: ${HOME}/logs/spring-boot-template.log
 
 server:
   port: 5000
 
 app:
-  name: email-system
+  name: spring-boot-template
   dir: ${user.home}/.${app.name}
   db-name: emailsystem
   db-host: localhost

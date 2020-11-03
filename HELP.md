@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'io.github.astrapi69.email-system' is invalid and this project uses 'io.github.astrapi69.emailsystem' instead.
+* The original package name 'io.github.astrapi69.spring-boot-template' is invalid and this project uses 'io.github.astrapi69.emailsystem' instead.
 
 # Getting Started
 
