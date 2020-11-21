@@ -1,4 +1,4 @@
-package io.github.astrapi69.emailsystem.config;
+package io.github.astrapi69.template.config;
 
 import java.util.List;
 
@@ -30,16 +30,13 @@ import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
 
 @Configuration
-@ComponentScan(basePackages = {
-    "io.github.astrapi69.emailsystem",
-    "io.github.astrapi69.emailsystem.service",
-    "io.github.astrapi69.emailsystem.jpa.entities"})
+@ComponentScan(basePackages = { "io.github.astrapi69.template",
+	"io.github.astrapi69.template.service", "io.github.astrapi69.template.jpa.entities" })
 @EntityScan(basePackages = {
-    "io.github.astrapi69.emailsystem.jpa.entities",
-    "io.github.astrapi69.emailsystem.jpa.entities.user",
-    "io.github.astrapi69.emailsystem.jpa.entities.payment"})
-@EnableJpaRepositories(basePackages = {
-    "io.github.astrapi69.emailsystem.jpa.repositories"})
+    "io.github.astrapi69.template.jpa.entities",
+    "io.github.astrapi69.template.jpa.entities.user",
+    "io.github.astrapi69.template.jpa.entities.payment"})
+@EnableJpaRepositories(basePackages = { "io.github.astrapi69.template.jpa.repositories" })
 @EnableTransactionManagement
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)

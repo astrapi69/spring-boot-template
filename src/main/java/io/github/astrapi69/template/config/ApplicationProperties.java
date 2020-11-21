@@ -1,7 +1,4 @@
-package io.github.astrapi69.emailsystem.config;
-
-import java.util.ArrayList;
-import java.util.List;
+package io.github.astrapi69.template.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -25,11 +22,5 @@ public class ApplicationProperties
 	String dbPassword;
 	String dir;
 	String name;
-	String stripePublicKey;
-	String stripeSecretKey;
-	String jwtSecret;
-	List<String> publicPathPatterns = new ArrayList<>();
-	List<String> signinPathPatterns = new ArrayList<>();
-	List<String> ignorePathPatterns = new ArrayList<>();
 
 }

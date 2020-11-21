@@ -1,4 +1,4 @@
-package io.github.astrapi69.emailsystem.exceptionhandling;
+package io.github.astrapi69.template.exceptionhandling;
 
 import lombok.AccessLevel;
 import lombok.Getter;

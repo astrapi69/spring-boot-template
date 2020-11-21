@@ -1,4 +1,4 @@
-package io.github.astrapi69.emailsystem.enums;
+package io.github.astrapi69.template.enums;
 
 public enum ApplicationHeaderKeyNames
 {

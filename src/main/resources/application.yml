@@ -18,29 +18,12 @@ server:
 app:
   name: spring-boot-template
   dir: ${user.home}/.${app.name}
-  db-name: emailsystem
+  db-name: template
   db-host: localhost
   db-port: 5432
   db-username: postgres
   db-password: postgres
   db-url-prefix: jdbc:postgresql://
-  jwt:
-    secret: cp*D33tZY(juumBUcBDVv8tJ!8w/T@JGpS)@)Sr6EYfjFBTRUJfu@&6jz-7*cFk5
-  signin-path-patterns:
-    - /v1/auth/signin
-  public-path-patterns:
-    - /v1/jwt/ispublic
-    - /v1/jwt/register
-    - /v1/public
-  ignore-path-patterns:
-    - /resources/**
-    - /v1/jwt/register
-    - /v2/api-docs # swagger ui
-    - /configuration/ui # swagger ui
-    - /swagger-resources/** # swagger ui
-    - /configuration/security # swagger ui
-    - /swagger-ui.html # swagger ui
-    - /webjars/** # swagger ui
 
 spring:
   profiles: dev
