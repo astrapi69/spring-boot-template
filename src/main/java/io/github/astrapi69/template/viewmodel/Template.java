@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +18,6 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Template
 {
-	LocalDateTime templateDate;
-	String template;
+	UUID id;
+	String name;
 }

@@ -17,6 +17,11 @@ server:
 
 app:
   name: ${name}
+  base-package: io.github.astrapi69.template
+  api-info-title: template REST API
+  api-info-description: REST API template description
+  contact-name: template inc.
+  contact-url: www.template.org
   dir: ${user.home}/.${app.name}
   db-name: template
   db-host: localhost

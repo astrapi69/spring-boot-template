@@ -1,5 +1,6 @@
 package io.github.astrapi69.template.config;
 
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,11 +8,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-
 @Configuration
+@AllArgsConstructor
 @EnableSwagger2
 public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 {
+
+	ApplicationProperties applicationProperties;
 
 	@Bean public Docket api()
 	{
@@ -25,17 +28,17 @@ public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 
 	@Override public String getBasePackage()
 	{
-		return "io.github.astrapi69.template";
+		return applicationProperties.getBasePackage();
 	}
 
 	@Override public String getApiInfoTitle()
 	{
-		return "Lottery REST API";
+		return applicationProperties.getApiInfoTitle();
 	}
 
 	@Override public String getApiInfoDescription()
 	{
-		return "REST API for lottery and gamble";
+		return applicationProperties.getApiInfoDescription();
 	}
 
 	@Override public String getApiInfoVersion()
@@ -45,12 +48,12 @@ public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 
 	@Override public String getContactName()
 	{
-		return "foo-gamble inc.";
+		return applicationProperties.getContactName();
 	}
 
 	@Override public String getContactUrl()
 	{
-		return "www.foo-gamble.com";
+		return applicationProperties.getContactUrl();
 	}
 
 	@Override public String getDocketPathsPathRegex()

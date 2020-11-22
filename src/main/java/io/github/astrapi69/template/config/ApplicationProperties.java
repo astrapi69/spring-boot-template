@@ -22,5 +22,10 @@ public class ApplicationProperties
 	String dbPassword;
 	String dir;
 	String name;
+	String basePackage;
+	String apiInfoTitle;
+	String apiInfoDescription;
+	String contactName;
+	String contactUrl;
 
 }
