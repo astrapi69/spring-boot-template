@@ -16,7 +16,7 @@ server:
   port: 5000
 
 app:
-  name: spring-boot-template
+  name: ${name}
   dir: ${user.home}/.${app.name}
   db-name: template
   db-host: localhost
@@ -26,7 +26,6 @@ app:
   db-url-prefix: jdbc:postgresql://
 
 spring:
-  profiles: dev
   main:
     allow-bean-definition-overriding: false
   datasource:
@@ -43,12 +42,15 @@ spring:
           lob:
             non_contextual_creation: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       show_sql: true
       use_sql_comments: true
       format_sql: true
       generate_statistics: false
 
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
+  config:
+    activate:
+      on-profile: dev

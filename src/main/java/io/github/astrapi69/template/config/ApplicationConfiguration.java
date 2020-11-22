@@ -31,12 +31,9 @@ import lombok.experimental.FieldDefaults;
 
 @Configuration
 @ComponentScan(basePackages = { "io.github.astrapi69.template",
-	"io.github.astrapi69.template.service", "io.github.astrapi69.template.jpa.entities" })
-@EntityScan(basePackages = {
-    "io.github.astrapi69.template.jpa.entities",
-    "io.github.astrapi69.template.jpa.entities.user",
-    "io.github.astrapi69.template.jpa.entities.payment"})
-@EnableJpaRepositories(basePackages = { "io.github.astrapi69.template.jpa.repositories" })
+	"io.github.astrapi69.template.service", "io.github.astrapi69.template.jpa.entity" })
+@EntityScan(basePackages = { "io.github.astrapi69.template.jpa.entity" })
+@EnableJpaRepositories(basePackages = { "io.github.astrapi69.template.jpa.repository" })
 @EnableTransactionManagement
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -50,13 +47,13 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     @SuppressWarnings("unused")
     Environment env;
 
-    public static ObjectMapper initialize(final @NonNull ObjectMapper objectMapper)
+    public static ObjectMapper initialize(final @NonNull ObjectMapper objectMapper, ApplicationProperties applicationProperties)
     {
         SimpleModule module;
         JavaTimeModule javaTimeModule;
         SimpleAbstractTypeResolver resolver;
 
-        module = new SimpleModule("lottery-app", Version.unknownVersion());
+        module = new SimpleModule(applicationProperties.getName(), Version.unknownVersion());
         resolver = new SimpleAbstractTypeResolver();
         module.setAbstractTypes(resolver);
         objectMapper.registerModule(module);
@@ -109,6 +106,6 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     @Bean
     public ObjectMapper objectMapper()
     {
-        return initialize(new ObjectMapper());
+        return initialize(new ObjectMapper(), applicationProperties);
     }
 }
