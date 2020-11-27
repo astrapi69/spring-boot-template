@@ -16,6 +16,7 @@ public class ApplicationProperties
 
 	String dbHost;
 	String dbName;
+	boolean printingModeOn;
 	int dbPort;
 	String dbUrlPrefix;
 	String dbUsername;

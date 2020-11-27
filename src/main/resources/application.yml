@@ -17,6 +17,7 @@ server:
 
 app:
   name: ${name}
+  printing-mode-on: false
   base-package: io.github.astrapi69.template
   api-info-title: template REST API
   api-info-description: REST API template description
