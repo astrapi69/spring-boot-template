@@ -17,7 +17,8 @@ public class SpringTemplateApplication
 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringTemplateApplication.class, args);
+		SpringApplication application = new SpringApplication(SpringTemplateApplication.class);
+		application.run(args);
 	}
 
 }
