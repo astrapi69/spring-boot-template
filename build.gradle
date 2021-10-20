@@ -38,7 +38,6 @@ sourceCompatibility = "$projectSourceCompatibility"
 repositories {
 	mavenLocal()
 	mavenCentral()
-	jcenter()
 }
 
 dependencies {
@@ -144,25 +143,10 @@ publishing {
 	}
 }
 
-signing {
-	if (releaseVersion) {
-		sign publishing.publications.mavenJava
-	}
-}
-
 javadoc {
 	if(JavaVersion.current().isJava9Compatible()) {
 		options.addBooleanOption("html5", true)
 	}
-}
-
-tasks.withType(JavaCompile) {
-	options.encoding = "UTF-8"
-	options.compilerArgs << "-Xlint:unchecked"
-}
-
-sourceSets {
-	main.java.srcDirs += "build/generated/source/apt/main"
 }
 
 test {
