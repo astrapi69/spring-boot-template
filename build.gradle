@@ -45,14 +45,14 @@ dependencies {
 	compileOnly("org.projectlombok:lombok:$lombokVersion")
 	annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-	implementation("de.alpharogroup:bean-mapper-api:$beanMapperApiVersion")
-	implementation("de.alpharogroup:generic-mapper:$genericMapperVersion")
-	implementation("de.alpharogroup:file-worker:$fileWorkerVersion")
+	implementation("io.github.astrapi69:bean-mapper-api:$beanMapperApiVersion")
+	implementation("io.github.astrapi69:generic-mapper:$genericMapperVersion")
+	implementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
 	implementation("de.alpharogroup:spring-boot-extensions:$springBootExtensionsVersion")
 	implementation("de.alpharogroup:json-extensions:$jsonExtensionsVersion")
 	implementation("de.alpharogroup:ent-api:$entApiVersion")
 	implementation("de.alpharogroup:ent-core:$entCoreVersion")
-	implementation("de.alpharogroup:throw-able:$throwAbleVersion")
+	implementation("io.github.astrapi69:throw-able:$throwAbleVersion")
 	implementation("de.alpharogroup:spring-tool-extensions:$springToolExtensionsVersion")
 	implementation("io.jsonwebtoken:jjwt-api:$jjwtVersion")
 	implementation("io.jsonwebtoken:jjwt-impl:$jjwtVersion")
@@ -78,6 +78,8 @@ dependencies {
 	testImplementation("org.testcontainers:testcontainers:$testcontainersVersion")
 	testImplementation("org.testcontainers:postgresql:$testcontainersVersion")
 	testImplementation("de.alpharogroup:jobj-contract-verifier:$jobjContractVerifierVersion")
+	testImplementation("io.github.astrapi69:gradle-migration-data:$gradleMigrationDataVersion")
+	testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
