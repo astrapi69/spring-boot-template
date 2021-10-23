@@ -97,6 +97,12 @@ class InitialTemplateTest
 		});
 
 		// create run configurations for current project
+		createRunConfigurations(concreteProjectName, templateProjectName, sourceProjectDir);
+	}
+
+	private void createRunConfigurations(String concreteProjectName, String templateProjectName,
+		File sourceProjectDir)
+	{
 		String sourceProjectDirNamePrefix;
 		String targetProjectDirNamePrefix;
 		CopyGradleRunConfigurations copyGradleRunConfigurationsData;
@@ -116,5 +122,6 @@ class InitialTemplateTest
 			.deleteFilesWithFileFilter(copyGradleRunConfigurationsData.getIdeaTargetDir(),
 				new PrefixFileFilter("spring_boot_template", false)));
 	}
+
 
 }
