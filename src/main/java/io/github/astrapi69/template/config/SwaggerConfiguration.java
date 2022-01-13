@@ -1,6 +1,9 @@
 package io.github.astrapi69.template.config;
 
+import io.github.astrapi69.spring.configuration.AbstractSwaggerConfiguration;
+import io.github.astrapi69.template.viewmodel.enums.AppRestPath;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,10 +16,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 {
-
+	@Autowired
 	ApplicationProperties applicationProperties;
 
-	@Bean public Docket api()
+	@Bean
+	public Docket api()
 	{
 		return super.api();
 	}
@@ -26,39 +30,75 @@ public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 		return super.metaData();
 	}
 
-	@Override public String getBasePackage()
+	@Override
+	public String newBasePackage()
 	{
-		return applicationProperties.getBasePackage();
+		return applicationProperties.getBasePackage() != null
+			? applicationProperties.getBasePackage()
+			: "io.github.astrapi69.template";
 	}
 
-	@Override public String getApiInfoTitle()
+	@Override
+	public String newApiInfoTitle()
 	{
-		return applicationProperties.getApiInfoTitle();
+		return applicationProperties.getApiInfoTitle() != null
+			? applicationProperties.getApiInfoTitle()
+			: "template REST API";
 	}
 
-	@Override public String getApiInfoDescription()
+	@Override
+	public String newApiInfoDescription()
 	{
-		return applicationProperties.getApiInfoDescription();
+		return applicationProperties.getApiInfoDescription() != null
+			? applicationProperties.getApiInfoDescription()
+			: "description of REST API of this spring-boot-template application";
 	}
 
-	@Override public String getApiInfoVersion()
+	@Override
+	public String newApiInfoVersion()
 	{
-		return ApplicationConfiguration.VERSION_API_1;
+		return applicationProperties.getApiInfoVersion() != null
+			? applicationProperties.getApiInfoVersion()
+			: AppRestPath.REST_API_VERSION_1;
 	}
 
-	@Override public String getContactName()
+	@Override
+	public String newApiInfoLicense()
 	{
-		return applicationProperties.getContactName();
+		return applicationProperties.getApiInfoLicense() != null
+			? applicationProperties.getApiInfoLicense()
+			: "MIT";
 	}
 
-	@Override public String getContactUrl()
+	@Override
+	public String newApiInfoLicenseUrl()
 	{
-		return applicationProperties.getContactUrl();
+		return applicationProperties.getApiInfoLicenseUrl() != null
+			? applicationProperties.getApiInfoLicenseUrl()
+			: "https://opensource.org/licenses/MIT";
 	}
 
-	@Override public String getDocketPathsPathRegex()
+	@Override
+	public String newContactName()
 	{
-		return ApplicationConfiguration.REST_VERSION + "/.*|";
+		return applicationProperties.getContactName() != null
+			? applicationProperties.getContactName()
+			: "template inc.";
 	}
 
+	@Override
+	public String newContactUrl()
+	{
+		return applicationProperties.getContactUrl() != null
+			? applicationProperties.getContactUrl()
+			: "www.template.org";
+	}
+
+	@Override
+	public String newDocketPathsRegex()
+	{
+		return applicationProperties.getDocketPathsRegex() != null
+			? applicationProperties.getDocketPathsRegex()
+			: AppRestPath.REST_DOCKET_PATHS_REGEX;
+	}
 }

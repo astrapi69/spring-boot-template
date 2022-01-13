@@ -31,7 +31,7 @@ public class SpringTemplateApplication
 	{
 		return args -> {
 			ApplicationProperties applicationProperties = ctx.getBean(ApplicationProperties.class);
-			if(applicationProperties.isPrintingModeOn()){
+			if(applicationProperties.isPrintingModeOn()) {
 				System.out.println("Let's inspect the beans provided by Spring Boot:");
 				String[] beanNames = ctx.getBeanDefinitionNames();
 				Arrays.stream(beanNames).sorted().forEach(System.out::println);

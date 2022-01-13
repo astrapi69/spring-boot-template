@@ -5,6 +5,7 @@ import io.github.astrapi69.template.jpa.entity.Templates;
 import io.github.astrapi69.template.mapper.TemplatesMapper;
 import io.github.astrapi69.template.service.TemplatesService;
 import io.github.astrapi69.template.viewmodel.Template;
+import io.github.astrapi69.template.viewmodel.enums.AppRestPath;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -13,12 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(ApplicationConfiguration.REST_VERSION + TemplatesController.REST_PATH)
+@RequestMapping(AppRestPath.REST_VERSION + AppRestPath.REST_TEMPLATES)
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class TemplatesController
 {
-	public static final String REST_PATH = "/templates";
 	TemplatesService templatesService;
 	TemplatesMapper mapper;
 

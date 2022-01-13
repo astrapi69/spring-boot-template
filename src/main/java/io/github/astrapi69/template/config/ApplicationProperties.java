@@ -25,8 +25,14 @@ public class ApplicationProperties
 	String name;
 	String basePackage;
 	String apiInfoTitle;
+	String apiInfoTermsOfServiceUrl;
 	String apiInfoDescription;
+	String apiInfoVersion;
+	String apiInfoLicense;
+	String apiInfoLicenseUrl;
 	String contactName;
 	String contactUrl;
+	String contactEmail;
+	String docketPathsRegex;
 
 }

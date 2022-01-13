@@ -17,12 +17,16 @@ server:
 
 app:
   name: ${name}
-  printing-mode-on: false
-  base-package: io.github.astrapi69.template
   api-info-title: template REST API
   api-info-description: REST API template description
+  api-info-version: /v1
+  api-info-license: MIT
+  api-info-license-url: https://opensource.org/licenses/MIT
   contact-name: template inc.
   contact-url: www.template.org
+  contact-email: info@template.org
+  base-package: io.github.astrapi69.template
+  docket-paths-regex: /v1/.*|
   dir: ${user.home}/.${app.name}
   db-name: template
   db-host: localhost
@@ -30,6 +34,7 @@ app:
   db-username: postgres
   db-password: postgres
   db-url-prefix: jdbc:postgresql://
+  printing-mode-on: false
 
 spring:
   main:
