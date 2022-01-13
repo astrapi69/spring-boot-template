@@ -2,6 +2,9 @@
 name: spring-boot-template
 environment: dev
 
+server:
+  port: 5000
+
 logging:
   level:
     .: debug
@@ -11,9 +14,6 @@ logging:
       type.descriptor.sql: trace
   file:
     name: ${HOME}/logs/spring-boot-template.log
-
-server:
-  port: 5000
 
 app:
   name: ${name}
@@ -45,7 +45,6 @@ spring:
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     url: ${app.db-url-prefix}${app.db-host}:${app.db-port}/${app.db-name}
-    initialization-mode: never
   jpa:
     properties:
       hibernate:
@@ -68,3 +67,6 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  sql:
+    init:
+      mode: never
