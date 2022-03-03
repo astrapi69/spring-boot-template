@@ -39,7 +39,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.identifiable.Identifiable;
+import io.github.astrapi69.data.identifiable.Identifiable;
 
 @Entity
 @Table(name = Templates.TABLE_NAME)
