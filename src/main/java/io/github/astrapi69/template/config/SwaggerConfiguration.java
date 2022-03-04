@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.template.config;
 
+import io.github.astrapi69.spring.rest.BaseRestPath;
 import lombok.AllArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import io.github.astrapi69.spring.configuration.AbstractSwaggerConfiguration;
-import io.github.astrapi69.template.viewmodel.enums.AppRestPath;
+import io.github.astrapi69.template.enumtype.AppRestPath;
 
 @Configuration
 @AllArgsConstructor
@@ -84,7 +85,7 @@ public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 	{
 		return applicationProperties.getApiInfoVersion() != null
 			? applicationProperties.getApiInfoVersion()
-			: AppRestPath.REST_API_VERSION_1;
+			: BaseRestPath.REST_API_VERSION_1;
 	}
 
 	@Override
@@ -124,6 +125,6 @@ public class SwaggerConfiguration extends AbstractSwaggerConfiguration
 	{
 		return applicationProperties.getDocketPathsRegex() != null
 			? applicationProperties.getDocketPathsRegex()
-			: AppRestPath.REST_DOCKET_PATHS_REGEX;
+			: BaseRestPath.REST_VERSION_1_DOCKET_PATHS_REGEX;
 	}
 }

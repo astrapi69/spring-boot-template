@@ -26,7 +26,7 @@ app:
   contact-url: www.template.org
   contact-email: info@template.org
   base-package: io.github.astrapi69.template
-  docket-paths-regex: /v1/.*|
+  docket-paths-regex: ${app.api-info-version}/.*|
   dir: ${user.home}/.${app.name}
   db-name: template
   db-host: localhost
@@ -40,8 +40,8 @@ spring:
   main:
     allow-bean-definition-overriding: false
   datasource:
-    username: postgres
-    password: postgres
+    username: ${app.db-username}
+    password: ${app.db-password}
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     url: ${app.db-url-prefix}${app.db-host}:${app.db-port}/${app.db-name}

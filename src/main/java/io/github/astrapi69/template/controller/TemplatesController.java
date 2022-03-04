@@ -36,7 +36,7 @@ import io.github.astrapi69.template.jpa.entity.Templates;
 import io.github.astrapi69.template.mapper.TemplatesMapper;
 import io.github.astrapi69.template.service.TemplatesService;
 import io.github.astrapi69.template.viewmodel.Template;
-import io.github.astrapi69.template.viewmodel.enums.AppRestPath;
+import io.github.astrapi69.template.enumtype.AppRestPath;
 
 @RestController
 @RequestMapping(AppRestPath.REST_VERSION + AppRestPath.REST_TEMPLATES)

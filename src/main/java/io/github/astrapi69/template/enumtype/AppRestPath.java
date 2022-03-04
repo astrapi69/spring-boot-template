@@ -22,22 +22,31 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.template.exceptionhandling;
+package io.github.astrapi69.template.enumtype;
 
+import io.github.astrapi69.spring.rest.BaseRestPath;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Getter
+/**
+ * The enum class {@link AppRestPath} holds constants for the application rest paths
+ */
 @RequiredArgsConstructor
+@Getter
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public enum ErrorCode
+public enum AppRestPath
 {
-	USERNAME_OR_PASSWORD_VALIDATION_FAILED(0,
-		"Username or password does not exist or password is not typed correctly");
+	/** The enum value for the rest path VERSION. */
+	VERSION(BaseRestPath.REST_VERSION_1),
+	/** The enum value for the regular expression rest path which paths are allowed */
+	DOCKET_PATHS_REGEX(BaseRestPath.REST_VERSION_1_DOCKET_PATHS_REGEX);
 
-	int code;
-	String message;
+	public static final String REST_VERSION = BaseRestPath.REST_VERSION_1;
+
+	public static final String REST_TEMPLATES = "/templates";
+
+	String value;
 
 }

@@ -6,7 +6,7 @@ spring:
   application:
     admin:
       enabled: false
-      jmx-name: org.springframework.boot:type=Admin,name=SpringTemplateApplication
+      jmx-name: org.springframework.boot:type=Admin,name=SpringBootApplicationRunner
 
 app:
   db-name: template

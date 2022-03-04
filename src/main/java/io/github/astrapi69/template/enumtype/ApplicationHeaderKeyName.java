@@ -40,8 +40,7 @@ public enum ApplicationHeaderKeyName
 	/**
 	 * The header key name for the default token issuer
 	 **/
-	DEFAULT_TOKEN_ISSUER_VALUE(
-		ApplicationHeaderKeyName.DEFAULT_TOKEN_ISSUER),
+	DEFAULT_TOKEN_ISSUER_VALUE(ApplicationHeaderKeyName.DEFAULT_TOKEN_ISSUER),
 
 	/**
 	 * The header key name for the user roles

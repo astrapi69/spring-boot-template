@@ -22,35 +22,22 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.template.viewmodel.enums;
+package io.github.astrapi69.template.enumtype;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-/**
- * The enum class {@link AppRestPath} holds constants for the application rest paths
- */
-@RequiredArgsConstructor
 @Getter
+@RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public enum AppRestPath
+public enum ErrorCode
 {
-	/** The enum value for the rest path VERSION. */
-	VERSION(AppRestPath.REST_VERSION),
-	/** The enum value for the regular expression rest path which paths are allowed */
-	DOCKET_PATHS_REGEX(AppRestPath.REST_DOCKET_PATHS_REGEX);
+	USERNAME_OR_PASSWORD_VALIDATION_FAILED(0,
+		"Username or password does not exist or password is not typed correctly");
 
-	public static final String SLASH = "/";
-	public static final String REST_DOCKET_PATHS_REGEX_SUFFIX = "/.*|";
-	public static final String REST_API_VERSION_1 = "v1";
-	public static final String REST_VERSION = SLASH + REST_API_VERSION_1;
-	public static final String REST_DOCKET_PATHS_REGEX = REST_VERSION
-		+ REST_DOCKET_PATHS_REGEX_SUFFIX;
-
-	public static final String REST_TEMPLATES = "/templates";
-
-	String value;
+	int code;
+	String message;
 
 }

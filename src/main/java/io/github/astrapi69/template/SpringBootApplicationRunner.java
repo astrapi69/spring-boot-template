@@ -27,7 +27,6 @@ package io.github.astrapi69.template;
 import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
@@ -43,12 +42,13 @@ import io.github.astrapi69.template.config.SwaggerConfiguration;
 @Import({ ApplicationConfiguration.class, SwaggerConfiguration.class })
 @EnableConfigurationProperties({ ApplicationProperties.class })
 @SpringBootApplication
-public class SpringTemplateApplication
+public class SpringBootApplicationRunner
 {
 
 	public static void main(String[] args)
 	{
-		SpringApplication application = new SpringApplication(SpringTemplateApplication.class);
+		org.springframework.boot.SpringApplication application = new org.springframework.boot.SpringApplication(
+			SpringBootApplicationRunner.class);
 		application.run(args);
 	}
 
