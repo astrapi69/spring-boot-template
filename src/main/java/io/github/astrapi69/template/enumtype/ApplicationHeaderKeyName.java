@@ -24,31 +24,45 @@
  */
 package io.github.astrapi69.template.enumtype;
 
-public enum ApplicationHeaderKeyNames
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+
+/**
+ * The enum class {@link ApplicationHeaderKeyName} holds constants for the header key names
+ */
+@RequiredArgsConstructor
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public enum ApplicationHeaderKeyName
 {
+	/**
+	 * The header key name for the default token issuer
+	 **/
 	DEFAULT_TOKEN_ISSUER_VALUE(
-		ApplicationHeaderKeyNames.DEFAULT_TOKEN_ISSUER), HEADER_KEY_ROLES_VALUE(
-			ApplicationHeaderKeyNames.HEADER_KEY_ROLES), DEFAULT_TOKEN_AUDIENCE_VALUE(
-				ApplicationHeaderKeyNames.DEFAULT_TOKEN_AUDIENCE);
-
-	public static final String DEFAULT_TOKEN_ISSUER = "user-auth-api";
-	public static final String DEFAULT_TOKEN_AUDIENCE = "user-auth-app";
-	public static final String HEADER_KEY_ROLES = "u-roles";
-
-	private final String name;
-
-	ApplicationHeaderKeyNames(final String name)
-	{
-		this.name = name;
-	}
+		ApplicationHeaderKeyName.DEFAULT_TOKEN_ISSUER),
 
 	/**
-	 * Gets the specific name
-	 *
-	 * @return the specific name
-	 */
-	public String getName()
-	{
-		return name;
-	}
+	 * The header key name for the user roles
+	 **/
+	HEADER_KEY_ROLES_VALUE(ApplicationHeaderKeyName.HEADER_KEY_ROLES),
+
+	/**
+	 * The header key name for the default audience
+	 **/
+	DEFAULT_TOKEN_AUDIENCE_VALUE(ApplicationHeaderKeyName.DEFAULT_TOKEN_AUDIENCE);
+
+	/** The constant for the header key name for the default token issuer **/
+	public static final String DEFAULT_TOKEN_ISSUER = "user-auth-api";
+
+	/** The constant for the header key name for the default audience **/
+	public static final String DEFAULT_TOKEN_AUDIENCE = "user-auth-app";
+
+	/** The constant for the header key name for the user roles **/
+	public static final String HEADER_KEY_ROLES = "u-roles";
+
+	/** The value of the header key name **/
+	private final String name;
+
 }
